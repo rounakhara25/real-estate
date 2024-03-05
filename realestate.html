@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="realestate1.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="realestate.css">
+
+    <title>Responsive real state website - SkyStates</title>
+</head>
+
+<body>
+    <!-- https://youtu.be/twRLgPsP1H0 -->
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                SkyStates <i class='bx bxs-home-alt-2'></i>
+            </a>
+
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home-alt-2'></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#popular" class="nav__link">
+                            <i class='bx bx-building-house'></i>
+                            <span>Residences</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#value" class="nav__link">
+                            <i class='bx bx-award'></i>
+                            <span>Value</span>
+                        </a>
+                    </li>
+
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class='bx bx-phone'></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Theme change button -->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+            <a href="#" class="button nav__button">
+                Subscribe
+            </a>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Discover <br> Most Suitable <br> Property
+                    </h1>
+                    <p class="home__description">
+                        Find a variety of properties that suit you very easily,
+                        forget all difficulties in finding a residence for you
+                    </p>
+
+                    <form action="" class="home__search">
+                        <i class='bx bxs-map'></i>
+                        <input type="search" placeholder="Search by location..." class="home__search-input">
+                        <button class="button">Search</button>
+                    </form>
+
+                    <div class="home__value">
+                        <div>
+                            <h1 class="home__value-number">
+                                9K <span>+</span>
+                            </h1>
+                            <span class="home__value-description">
+                                Premium <br> Product
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="home__value-number">
+                                2K <span>+</span>
+                            </h1>
+                            <span class="home__value-description">
+                                Happy <br> Customer
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="home__value-number">
+                                28K <span>+</span>
+                            </h1>
+                            <span class="home__value-description">
+                                Awards <br> Winning
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="home__images">
+                    <div class="home__orbe"></div>
+
+                    <div class="home__img">
+                        <img src="./home.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== LOGOS ====================-->
+        <section class="logos section">
+            <div class="logos__container container grid">
+                <div class="logos__img">
+                    <img src="https://logowik.com/content/uploads/images/prologis8920.jpg" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="data:image/png;base64,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" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="data:image/jpeg;base64,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" alt="">
+                </div>
+                <div class="logos__img">
+                    <img src="https://logowik.com/content/uploads/images/digital-realty9875.jpg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--==================== POPULAR ====================-->
+        <section class="popular section" id="popular">
+            <div class="container">
+                <span class="section__subtitle">Best Choise</span>
+                <h2 class="section__title">
+                    Popular Residences<span>.</span>
+                </h2>
+
+                <div class="popular__container swiper">
+                    <div class="swiper-wrapper">
+                        <article class="popular__card swiper-slide">
+                            <img src="https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/home-improvement/wp-content/uploads/2022/07/download-23.jpg" alt="" class="popular__img">
+
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>66,356
+                                </h2>
+                                <h3 class="popular__title">
+                                    Garden City Assat
+                                </h3>
+                                <p class="popular__description">
+                                    Street The Garden City Of Miraflores,
+                                    Lima - Perú Av. Sol #9876
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="https://teja12.kuikr.com/is/a/c/880x425/gallery_images/original/cf6093c021d5ed6.gif" alt="" class="popular__img">
+
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>35,159
+                                </h2>
+                                <h3 class="popular__title">
+                                    Gables Luxurious House
+                                </h3>
+                                <p class="popular__description">
+                                    Street The Garden City Of Miraflores,
+                                    Lima - Perú Av. Sol #9876
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="data:image/jpeg;base64,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" alt="" class="popular__img">
+
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>75,043
+                                </h2>
+                                <h3 class="popular__title">
+                                    Garden Orchard City
+                                </h3>
+                                <p class="popular__description">
+                                    Street The Garden City Of Miraflores,
+                                    Lima - Perú Av. Sol #9876
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="https://teja12.kuikr.com/is/a/c/430x200/gallery_images/original/cf5fce1298a66b8.gif" alt="" class="popular__img">
+
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>62,024
+                                </h2>
+                                <h3 class="popular__title">
+                                    Luxurious City Garden
+                                </h3>
+                                <p class="popular__description">
+                                    Street The Garden City Of Miraflores,
+                                    Lima - Perú Av. Sol #9876
+                                </p>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <img src="https://imageio.forbes.com/specials-images/imageserve/1026205392/Beautiful-luxury-home-exterior-at-twilight/960x0.jpg?format=jpg&width=960" alt="" class="popular__img">
+
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    <span>$</span>47,043
+                                </h2>
+                                <h3 class="popular__title">
+                                    Aliva Private Garden
+                                </h3>
+                                <p class="popular__description">
+                                    Street The Garden City Of Miraflores,
+                                    Lima - Perú Av. Sol #9876
+                                </p>
+                            </div>
+                        </article>
+                    </div>
+
+                    <div class="swiper-button-next">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class='bx bx-chevron-left'></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== VALUE ====================-->
+        <section class="value section" id="value">
+            <div class="value__container container grid">
+                <div class="value__images">
+                    <div class="value__orbe"></div>
+
+                    <div class="value__img">
+                        <img src="./value.jpg" alt="" >
+                    </div>
+                </div>
+
+                <div class="value__content">
+                    <div class="value__data">
+                        <span class="section__subtitle">Our Value</span>
+                        <h2 class="section__title">
+                            Value We Give To You<span>.</span>
+                        </h2>
+                        <p class="value__description">
+                            We always ready to help by providing the best service for you.
+                            We believe a good place to live can make your life better.
+                        </p>
+                    </div>
+
+                    <div class="value__accordion">
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-shield-x value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Best interest rates on the market
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class='bx bxs-down-arrow'></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Price we provides is the best for you,
+                                    we guarantee no price changes on your property due
+                                    to various unexpected costs that may come.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-x-square value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Prevent unstable prices
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class='bx bxs-down-arrow'></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Price we provides is the best for you,
+                                    we guarantee no price changes on your property due
+                                    to various unexpected costs that may come.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-bar-chart-square value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Best prices on the market
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class='bx bxs-down-arrow'></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Price we provides is the best for you,
+                                    we guarantee no price changes on your property due
+                                    to various unexpected costs that may come.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-check-square value__accordion-icon'></i>
+                                <h3 class="value__accordion-title">
+                                    Security of your data
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class='bx bxs-down-arrow'></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Price we provides is the best for you,
+                                    we guarantee no price changes on your property due
+                                    to various unexpected costs that may come.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== CONTACT ====================-->
+        <section class="contact section" id="contact">
+            <div class="contact__container container grid">
+                <div class="contact__images">
+                    <div class="contact__orbe"></div>
+
+                    <div class="contact__img">
+                        <img src="./con.png" alt="">
+                    </div>
+                </div>
+
+                <div class="contact__content">
+                    <div class="contact__data">
+                        <span class="section__subtitle">Contact Us</span>
+                        <h2 class="section__title">
+                            Easy to Contact us<span>.</span>
+                        </h2>
+                        <p class="contact__description">
+                            Is there a problem finding your dream home? Need a
+                            guide in buying first home? or need a consultation
+                            on residential issues? just contact us.
+                        </p>
+                    </div>
+
+                    <div class="contact__card">
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-phone-call'></i>
+
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Call
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        022.321.165.19
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Call Now
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-message-rounded-dots'></i>
+
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Chat
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        022.321.165.19
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Chat Now
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-video'></i>
+
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Video Call
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        022.321.165.19
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Video Call Now
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-envelope'></i>
+
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Message
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        022.321.165.19
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Message Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== SUBSCRIBE ====================-->
+        <section class="subscribe section">
+            <div class="subscribe__container container">
+                <h1 class="subscribe__title">
+                    Get Started with SkyStates
+                </h1>
+                <p class="subscribe__description">
+                    Subscribe and find super attractive price
+                    quotes from us, Find your residence soon
+                </p>
+                <a href="#" class="button subscribe__button">
+                    Get Started
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer__container container grid">
+            <div>
+                <a href="#" class="footer__logo">
+                    SkyStates <i class='bx bxs-home-alt-2'></i>
+                </a>
+                <p class="footer__description">
+                    Our vision is to make all people <br>
+                    the best place to live for them.
+                </p>
+            </div>
+
+            <div class="footer__content">
+                <div>
+                    <h3 class="footer__title">
+                        About
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">About Us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Features</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">News & Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Company
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">How We Work?</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Capital</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Security</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Support
+                    </h3>
+
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Support center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="footer__title">
+                        Follow us
+                    </h3>
+
+                    <ul class="footer__social">
+                        <a href="https://www.facebook.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-facebook-circle'></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-instagram-alt'></i>
+                        </a>
+                        <a href="https://www.pinterest.com/" target="_blank" class="footer__social-link">
+                            <i class='bx bxl-pinterest'></i>
+                        </a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; Bedimcode. All rigths reserved
+            </span>
+
+            <div class="footer__privacy">
+                <a href="#">Terms & Agreements</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bx-chevrons-up'></i>
+    </a>
+
+    <!--=============== SCROLLREVEAL ===============-->
+    <script src="realestate2.js"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script src="realstate1.js"></script>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="realestate.js"></script>
+</body>
+
+</html>
